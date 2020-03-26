@@ -1,6 +1,6 @@
 from announcements import belots, carres, quintes, quartes, trieces
 import json
-import re
+from utils import format_json
 
 
 class Player:
@@ -100,21 +100,25 @@ class Player:
         if self.trieces: self.points += len(self.trieces) * 20
         return self.points
 
-    def to_json(self): 
+    def to_dict(self):
+        dicts ={
+            "cards": self.hand,
+            "announcements": self.get_announcements(),
+            "points": self.get_points()
+        }
+
+        return dicts
+
+    def to_json(self):
         dicts = {
-            self.name: {
-                "cards": self.hand,
-                "announcements": self.get_announcements(),
-                "points": self.get_points()
-            }
+            "cards": self.hand,
+            "announcements": self.get_announcements(),
+            "points": self.get_points()
         }
 
         json_repr = json.dumps(dicts, indent=4)
-        json_repr = re.sub(r'": \[\s+', '": [', json_repr)
-        json_repr = re.sub(r'",\s+', '", ', json_repr)
-        json_repr = re.sub(r'"\s+\]', '"]', json_repr)
 
-        return json_repr
+        return format_json(json_repr)
 
 
 def main():

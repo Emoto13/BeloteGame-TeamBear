@@ -1,5 +1,7 @@
 from Player import Player
 from power_of_cards import power_of_cards
+import json
+from utils import format_json
 
 
 class Team:
@@ -33,6 +35,23 @@ class Team:
         else:
             return player2_best_announcement
 
+    def to_dict(self):
+        dicts = {
+            self.player1.name: self.player1.to_dict(),
+            self.player2.name: self.player2.to_dict()
+        }
+
+        return dicts
+
+    def to_json(self):
+        dicts = {self.team_name: {
+            self.player1.name: self.player1.to_dict(),
+        },
+            self.player2.name: self.player2.to_dict()
+        }
+        json_repr = json.dumps(dicts, indent=4)
+        return format_json(json_repr)
+
 
 def main():
     player1 = Player(name='Gosho')
@@ -40,7 +59,6 @@ def main():
     player1.set_hand(['10s', '10c', 'Kh', 'Qh', '10d', '10h', 'Ah'])
     player2.set_hand(['10s', '10c', 'Kc', 'Qc', '10d', '10h', 'Jc'])
     tm = Team('Mechkite', player1, player2)
-    tm.get_best_declaration()
 
 
 if __name__ == '__main__':
