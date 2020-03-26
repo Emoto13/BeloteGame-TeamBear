@@ -1,5 +1,5 @@
 from Player import Player
-from announcements import power_of_cards
+from power_of_cards import power_of_cards
 
 
 class Team:
