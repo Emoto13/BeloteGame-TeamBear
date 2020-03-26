@@ -100,7 +100,7 @@ class Player:
         if self.trieces: self.points += len(self.trieces) * 20
         return self.points
 
-    def to_json(self):
+    def to_json(self): 
         dicts = {
             self.name: {
                 "cards": self.hand,
@@ -122,6 +122,7 @@ def main():
     player.set_hand(['10s', '10c', 'Kh', 'Qh', '10d', '10h', 'Ah'])
     print(player.get_announcements())
     print(player.to_json())
+    print(player.points)
 
 
 if __name__ == '__main__':
