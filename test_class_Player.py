@@ -170,7 +170,7 @@ class TestPlayerClass(unittest.TestCase):
         player = Player()
         player.set_hand(['10c', 'Jc', 'Qc', 'Kc', 'Jh', 'Qh', 'Kh', 'Ah'])
         points = 140
-        self.assertEqual(points, player.get_points())
+        self.assertEqual(points, player.set_points())
 
     # add edge cases to this test
     def test_if_to_json_works_correctly(self):

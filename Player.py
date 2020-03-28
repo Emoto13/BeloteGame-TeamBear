@@ -16,7 +16,7 @@ class Player:
         self.quartes = []
         self.trieces = []
         self.points = 0
-        self.set_hand(hand)  # premestih go zashoto ako e otgore inicializira funkciite predi da imame spisucite v konstruktora
+        self.set_hand(hand)
 
     def set_hand(self, hand):
         self.hand = hand
@@ -99,13 +99,13 @@ class Player:
         if self.trieces: announcements.extend(['triece'] * len(self.trieces))
         return announcements
 
-    def get_points(self):
+    def set_points(self):
         if self.quintes: self.points += len(self.quintes) * 100
         if self.quartes: self.points += len(self.quartes) * 50
         if self.trieces: self.points += len(self.trieces) * 20
         return self.points
 
-    def clear_scorings_for_round(self):
+    def clear_announcements_for_round(self):
         self.belots = []
         self.carres = []
         self.quintes = []
@@ -119,7 +119,7 @@ class Player:
         dicts = {
             "cards": self.hand,
             "announcements": self.get_announcements(),
-            "points": self.get_points()
+            "points": self.set_points()
         }
 
         return dicts
@@ -128,7 +128,7 @@ class Player:
         dicts = {
             "cards": self.hand,
             "announcements": self.get_announcements(),
-            "points": self.get_points()
+            "points": self.set_points()
         }
 
         json_repr = json.dumps(dicts, indent=4)

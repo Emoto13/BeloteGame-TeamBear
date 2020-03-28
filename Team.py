@@ -19,11 +19,11 @@ class Team:
         self.player2.clear_announcements()
 
     def set_points_for_team(self):
-        self.team_points += self.player1.get_points() + self.player2.get_points()
+        self.team_points += self.player1.set_points() + self.player2.set_points()
 
     def clear_scorings_for_round(self):
-        self.player1.clear_scorings_for_round()
-        self.player2.clear_scorings_for_round()
+        self.player1.clear_announcements_for_round()
+        self.player2.clear_announcements_for_round()
 
     def to_dict(self):
         dicts = {

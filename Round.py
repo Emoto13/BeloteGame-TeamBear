@@ -4,7 +4,6 @@ from utils import best_announcement, format_json
 import json
 
 
-
 class Round:
     def __init__(self, round_id, team1: Team = None, team2: Team = None):
         self.id = f'round {round_id}'
@@ -30,7 +29,7 @@ class Round:
         self.team1.set_points_for_team()
         self.team2.set_points_for_team()
 
-    def clear_scorings_for_round(self):
+    def clear_announcements_for_round(self):
         self.team1.clear_scorings_for_round()
         self.team2.clear_scorings_for_round()
 
