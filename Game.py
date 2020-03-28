@@ -3,6 +3,7 @@ from Team import Team
 from Round import Round
 from utils import game_end
 from cards import cards
+from WriteToTxt import WriteToTxt
 import random
 
 
@@ -14,13 +15,21 @@ class Game:
 
     def play_game(self):
         round_id = 1
-        while not game_end(self.team1.team_points, self.team2.team_points):
+        write_to_txt = WriteToTxt()
+        write_to_txt.setting_up_txt_teams(self.team1, self.team2)
 
+        while not game_end(self.team1.team_points, self.team2.team_points):
             self.set_player_hands()
+
             r = Round(round_id, self.team1, self.team2)
             r.compare_best_announcements()
+
+            write_to_txt.write_results(self.team1.team_points, self.team2.team_points, round_id)
+
             r.clear_announcements_for_round()
             round_id += 1
+
+        write_to_txt.write_game_end_output(self.team1.team_points, self.team2.team_points)
 
     def set_player_hands(self):
         random.shuffle(cards)
@@ -28,7 +37,6 @@ class Game:
         self.team1.player2.set_hand(cards[8:16])
         self.team2.player1.set_hand(cards[16:24])
         self.team2.player2.set_hand(cards[24:])
-
 
     # @staticmethod
     # def to_dict(current_round):
@@ -58,8 +66,6 @@ def main():
     g = Game(game_id=1, team1=team1, team2=team2)
 
     g.play_game()
-    print(team1.team_points)
-    print(team2.team_points)
     # print(team2.player1.get_announcements())
     # print(team2.player2.get_announcements())
     # print(team2.team_points)
