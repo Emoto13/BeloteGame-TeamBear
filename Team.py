@@ -9,6 +9,7 @@ class Team:
         self.team_name = team_name
         self.player1 = player1
         self.player2 = player2
+        self.team_points = 0
 
     def best_announcement(self):
         return best_announcement(self.player1, self.player2)
@@ -16,6 +17,13 @@ class Team:
     def clear_announcements(self):
         self.player1.clear_announcements()
         self.player2.clear_announcements()
+
+    def set_points_for_team(self):
+        self.team_points += self.player1.get_points() + self.player2.get_points()
+
+    def clear_scorings_for_round(self):
+        self.player1.clear_scorings_for_round()
+        self.player2.clear_scorings_for_round()
 
     def to_dict(self):
         dicts = {
@@ -36,12 +44,13 @@ class Team:
 
 
 def main():
-    player1 = Player(name='Gosho')
+    player1 = Player(name='Gosho', hand = ['Jd', 'Kd', 'Qd', '10c', 'Ah'])
     player2 = Player(name='Pesho')
-    player1.set_hand(['Jd', 'Kd', 'Qs', '10c', 'Ah'])
     player2.set_hand(['Jc', 'Kc', 'Qh', '10s', 'Ad'])
     tm = Team('Mechkite', player1, player2)
-    print(tm.best_announcement())
+    # print(tm.best_announcement())
+    print(tm.set_points_for_team())
+    print(tm.team_points)
 
 
 if __name__ == '__main__':

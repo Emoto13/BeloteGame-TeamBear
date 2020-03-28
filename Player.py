@@ -10,13 +10,13 @@ class Player:
             hand = []
 
         self.name = name
-        self.set_hand(hand)
         self.belots = []
         self.carres = []
         self.quintes = []
         self.quartes = []
         self.trieces = []
         self.points = 0
+        self.set_hand(hand)  # premestih go zashoto ako e otgore inicializira funkciite predi da imame spisucite v konstruktora
 
     def set_hand(self, hand):
         self.hand = hand
@@ -104,6 +104,16 @@ class Player:
         if self.quartes: self.points += len(self.quartes) * 50
         if self.trieces: self.points += len(self.trieces) * 20
         return self.points
+
+    def clear_scorings_for_round(self):
+        self.belots = []
+        self.carres = []
+        self.quintes = []
+        self.quartes = []
+        self.trieces = []
+        self.points = 0
+
+#need to fix below code:
 
     def to_dict(self):
         dicts = {

@@ -1,6 +1,8 @@
 from Player import Player
 from Team import Team
-from utils import best_announcement
+from utils import best_announcement, format_json
+import json
+
 
 
 class Round:
@@ -25,6 +27,30 @@ class Round:
         if better_announcement == team2_best_announcement:
             self.team1.clear_announcements()
 
+        self.team1.set_points_for_team()
+        self.team2.set_points_for_team()
+
+    def clear_scorings_for_round(self):
+        self.team1.clear_scorings_for_round()
+        self.team2.clear_scorings_for_round()
+
+    def to_dict(self):
+        dicts = {
+            self.team1.team_name: self.team1.to_dict(),
+            self.team2.team_name: self.team2.to_dict()
+        }
+
+        return dicts
+
+    def to_json(self):
+        dicts = {self.id: {
+            self.team1.team_name: self.team1.to_dict(),
+        },
+            self.team2.team_name: self.team2.to_dict()
+        }
+        json_repr = json.dumps(dicts, indent=4)
+        return format_json(json_repr)
+
 
 def main():
     player1 = Player(name='Marto')
@@ -44,6 +70,8 @@ def main():
     print(team2.best_announcement())
     print(r.compare_best_announcements())
     print(team1.player1.get_announcements(), team1.player2.get_announcements())
+    print(r.to_dict())
+    print(r.to_json())
 
 
 if __name__ == '__main__':
