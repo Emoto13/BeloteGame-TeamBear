@@ -44,3 +44,14 @@ def check_highest_card(entity1_best_announcement, entity2_best_announcement, typ
 
 def highest_card(entity_best_announcement):
     return power_of_cards[entity_best_announcement[-1][:-1]]
+
+
+def game_end(team1_points,team2_points):
+        if team1_points > 150 or team2_points > 150:
+            if team1_points > team2_points:
+                return team1_points
+            elif team1_points == team2_points:
+                return False
+            elif team2_points > team1_points:
+                return team2_points
+        return False
