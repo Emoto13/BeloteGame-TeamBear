@@ -1,36 +1,21 @@
 from Player import Player
-from power_of_cards import power_of_cards
 import json
-from utils import format_json
+from utils import format_json, best_announcement
 
 
 class Team:
 
-    def __init__(self, team_name='Team', player1=None, player2=None):
+    def __init__(self, team_name='Team', player1: Player = None, player2: Player = None):
         self.team_name = team_name
         self.player1 = player1
         self.player2 = player2
 
-    def get_best_declaration(self):
-        player1_best_announcement = self.player1.best_announcement()
-        player2_best_announcement = self.player2.best_announcement()
+    def best_announcement(self):
+        return best_announcement(self.player1, self.player2)
 
-        if len(player1_best_announcement) == len(player2_best_announcement):
-            return Team.check_highest_card(player1_best_announcement, player2_best_announcement)
-
-        if len(player1_best_announcement) > len(player2_best_announcement):
-            return player1_best_announcement
-        return player2_best_announcement
-
-    @staticmethod
-    def check_highest_card(player1_best_announcement, player2_best_announcement):
-        # gets the power of the card and converts it to int so we can >=<
-        player1_highest_card = power_of_cards[player1_best_announcement[-1][:-1]]
-        player2_highest_card = power_of_cards[player2_best_announcement[-1][:-1]]
-
-        if player1_highest_card > player2_highest_card:
-            return player1_best_announcement
-        return player2_best_announcement
+    def clear_announcements(self):
+        self.player1.clear_announcements()
+        self.player2.clear_announcements()
 
     def to_dict(self):
         dicts = {
@@ -53,9 +38,10 @@ class Team:
 def main():
     player1 = Player(name='Gosho')
     player2 = Player(name='Pesho')
-    player1.set_hand(['10s', '10c', 'Kh', 'Qh', '10d', '10h', 'Ah'])
-    player2.set_hand(['10s', '10c', 'Kc', 'Qc', '10d', '10h', 'Jc'])
+    player1.set_hand(['Jd', 'Kd', 'Qs', '10c', 'Ah'])
+    player2.set_hand(['Jc', 'Kc', 'Qh', '10s', 'Ad'])
     tm = Team('Mechkite', player1, player2)
+    print(tm.best_announcement())
 
 
 if __name__ == '__main__':

@@ -10,7 +10,7 @@ class Player:
             hand = []
 
         self.name = name
-        self.hand = hand
+        self.set_hand(hand)
         self.belots = []
         self.carres = []
         self.quintes = []
@@ -85,13 +85,18 @@ class Player:
         if self.trieces: return self.trieces[0]
         return []
 
+    def clear_announcements(self):
+        self.quintes = []
+        self.quartes = []
+        self.trieces = []
+
     def get_announcements(self):
         announcements = []
-        if self.belots: announcements.append('belot' * len(self.belots))
-        if self.carres: announcements.append('carre' * len(self.carres))
-        if self.quintes: announcements.append('quinte' * len(self.quintes))
-        if self.quartes: announcements.append('quarte' * len(self.quartes))
-        if self.trieces: announcements.append('triece' * len(self.trieces))
+        if self.belots: announcements.extend(['belot'] * len(self.belots))
+        if self.carres: announcements.extend(['carre'] * len(self.carres))
+        if self.quintes: announcements.extend(['quinte'] * len(self.quintes))
+        if self.quartes: announcements.extend(['quarte'] * len(self.quartes))
+        if self.trieces: announcements.extend(['triece'] * len(self.trieces))
         return announcements
 
     def get_points(self):
@@ -101,7 +106,7 @@ class Player:
         return self.points
 
     def to_dict(self):
-        dicts ={
+        dicts = {
             "cards": self.hand,
             "announcements": self.get_announcements(),
             "points": self.get_points()
