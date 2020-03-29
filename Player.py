@@ -9,13 +9,14 @@ class Player:
         if hand is None:
             hand = []
 
-        self.name = name
         self.belots = []
         self.carres = []
         self.quintes = []
         self.quartes = []
         self.trieces = []
         self.points = 0
+
+        self.name = name
         self.set_hand(hand)
 
     def set_hand(self, hand):
@@ -24,7 +25,7 @@ class Player:
 
     def set_declarations(self):
         self.check_if_hand_contains_belots(self.hand)
-        self.check_if_hand_contains_higher_declarations()
+        self.check_if_hand_contains_higher_announcements()
 
     def check_if_hand_contains_belots(self, hand):
         for belot in belots:
@@ -32,12 +33,12 @@ class Player:
                 self.belots.append(belot)
                 self.points += 20
 
-    def check_if_hand_contains_higher_declarations(self):
+    def check_if_hand_contains_higher_announcements(self):
         hand_set = set(self.hand)
         hand_set = self.check_if_hand_contains_carres(hand_set)
         hand_set = self.check_if_hand_contains_quintes(hand_set)
         hand_set = self.check_if_hand_contains_quartes(hand_set)
-        hand_set = self.check_if_hand_contains_trieces(hand_set)
+        self.check_if_hand_contains_trieces(hand_set)
 
     def check_if_hand_contains_carres(self, hand):
         state_for_carre_points = 0  # resolves how much points to give according to "carres" list above
