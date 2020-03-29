@@ -95,7 +95,7 @@ class TestRoundClass(unittest.TestCase):
         r = Round(round_id=1, team1=team1, team2=team2)
 
         r.compare_best_announcements()
-        r.clear_announcements_for_round()
+        r.clear_scoring_for_round()
 
         self.assertEqual(team2.player1.belots, [])
         self.assertEqual(team2.player1.trieces, [])
