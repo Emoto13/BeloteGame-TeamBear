@@ -1,7 +1,7 @@
 from Player import Player
 from Team import Team
 from Round import Round
-from utils import game_end
+from utils import game_end, clear_team_points
 from cards import cards
 from game_modes import game_modes
 from WriteToTxt import WriteToTxt
@@ -27,10 +27,11 @@ class Game:
 
             self.write_to_txt.write_results(self.team1.team_points, self.team2.team_points, round_id)
 
-            r.clear_announcements_for_round()
+            r.clear_scoring_for_round()
             round_id += 1
 
-        self.write_to_txt.write_game_end_output(self.team1.team_points, self.team2.team_points)
+        self.write_to_txt.write_game_end_output(self.team1, self.team2)
+        clear_team_points(self.team1, self.team2)
 
     def set_game(self):
         game_mode = random.choice(game_modes)
@@ -65,9 +66,13 @@ def main():
     player3 = Player(name='Gosho')
     player4 = Player(name='Pesho')
     team2 = Team(team_name='Kotetata', player1=player3, player2=player4)
-    w = WriteToTxt(team1,team2)
-    g = Game(game_id=1, team1=team1, team2=team2, write_to_txt = w)
-    g.play_game()
+    w = WriteToTxt(team1, team2)
+    g1 = Game(game_id=1, team1=team1, team2=team2, write_to_txt=w)
+    g1.play_game()
+    g2 = Game(game_id=2, team1=team1, team2=team2, write_to_txt=w)
+    g2.play_game()
+    g3 = Game(game_id=3, team1=team1, team2=team2, write_to_txt=w)
+    g3.play_game()
     # print(team2.player1.get_announcements())
     # print(team2.player2.get_announcements())
     # print(team2.team_points)
