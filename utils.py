@@ -63,3 +63,8 @@ def game_end(team1, team2):
             return True
 
     return False
+
+
+def clear_team_points(team1, team2):
+    team1.clear_points()
+    team2.clear_points()
