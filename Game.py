@@ -8,15 +8,16 @@ import random
 
 
 class Game:
-    def __init__(self, game_id: int, team1: Team = None, team2: Team = None):  # takes teams
+    def __init__(self, game_id: int, team1: Team = None, team2: Team = None,
+                 write_to_txt: WriteToTxt = None):  # takes teams
         self.id = f'game : {game_id}'
         self.team1 = team1
         self.team2 = team2
+        self.write_to_txt = write_to_txt
 
     def play_game(self):
         round_id = 1
-        write_to_txt = WriteToTxt()
-        write_to_txt.setting_up_txt_teams(self.team1, self.team2)
+        write_to_txt = WriteToTxt(self.team1, self.team2)
 
         while not game_end(self.team1.team_points, self.team2.team_points):
             self.set_player_hands()
