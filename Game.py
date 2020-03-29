@@ -18,7 +18,7 @@ class Game:
 
     def play_game(self):
         round_id = 1
-        
+
         while not game_end(self.team1.team_points, self.team2.team_points):
             self.set_game()
 
