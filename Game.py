@@ -19,7 +19,7 @@ class Game:
     def play_game(self):
         round_id = 1
 
-        while not game_end(self.team1.team_points, self.team2.team_points):
+        while not game_end(self.team1, self.team2):
             self.set_game()
 
             r = Round(round_id, self.team1, self.team2)

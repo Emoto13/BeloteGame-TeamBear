@@ -10,6 +10,7 @@ class Team:
         self.player1 = player1
         self.player2 = player2
         self.team_points = 0
+        self.games_won = 0
 
     def best_announcement(self):
         return best_announcement(self.player1, self.player2)
