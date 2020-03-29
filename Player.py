@@ -1,11 +1,12 @@
-from announcements import belots, carres, quintes, quartes, trieces
+from announcements import carres, quintes, quartes, trieces
+from belots import belots_modes
 import json
 from utils import format_json
 
 
 class Player:
 
-    def __init__(self, name='Player', hand=None):
+    def __init__(self, name='Player', hand=None): #accepts gamemode
         if hand is None:
             hand = []
 
@@ -19,15 +20,18 @@ class Player:
         self.name = name
         self.set_hand(hand)
 
-    def set_hand(self, hand):
+    def set_hand(self, hand, game_mode = 'All Trumps'):
         self.hand = hand
-        self.set_declarations()
 
-    def set_declarations(self):
-        self.check_if_hand_contains_belots(self.hand)
+        if game_mode != 'No Trumps':
+            self.set_declarations(game_mode)
+
+    def set_declarations(self, game_mode):
+        self.check_if_hand_contains_belots(self.hand, game_mode)
         self.check_if_hand_contains_higher_announcements()
 
-    def check_if_hand_contains_belots(self, hand):
+    def check_if_hand_contains_belots(self, hand, game_mode): #add game_mode
+        belots = belots_modes[game_mode]
         for belot in belots:
             if set(belot).issubset(set(hand)):
                 self.belots.append(belot)
