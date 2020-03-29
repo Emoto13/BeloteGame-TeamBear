@@ -1,5 +1,3 @@
-belots = [['Qs', 'Ks'], ['Qh', 'Kh'], ['Qd', 'Kd'], ['Qc', 'Kc']]
-
 carres = [['10s', '10c', '10d', '10h'],
           ['Qs', 'Qc', 'Qd', 'Qh'],
           ['Ks', 'Kc', 'Kd', 'Kh'],
