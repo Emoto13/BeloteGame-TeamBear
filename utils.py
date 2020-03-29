@@ -47,8 +47,8 @@ def highest_card(entity_best_announcement):
 
 
 def game_end(team1, team2):
-    team1_points = team1.points
-    team2_points = team2.points
+    team1_points = team1.team_points
+    team2_points = team2.team_points
 
     if team1_points > 150 or team2_points > 150:
         if team1_points == team2_points:
