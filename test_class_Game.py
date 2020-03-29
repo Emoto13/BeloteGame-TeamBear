@@ -1,9 +1,7 @@
 import unittest
 from Player import Player
 from Team import Team
-from Round import Round
 from Game import Game
-
 
 
 class TestGameClass(unittest.TestCase):
@@ -18,9 +16,10 @@ class TestGameClass(unittest.TestCase):
         team2 = Team(team_name='Kotetata', player1=player3, player2=player4)
         g = Game(game_id=1, team1=team1, team2=team2)
 
-        self.assertEqual(g.id,'game 1')
-        self.assertEqual(g.team1,team1)
-        self.assertEqual(g.team2,team2)
+        self.assertEqual(g.id, 'game 1')
+        self.assertEqual(g.team1, team1)
+        self.assertEqual(g.team2, team2)
+
 
 if __name__ == '__main__':
     unittest.main()
