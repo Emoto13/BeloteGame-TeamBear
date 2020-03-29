@@ -4,7 +4,6 @@ from power_of_cards import power_of_cards
 
 def format_json(json):
     json = re.sub(r'": \[\s+', '": [', json)
-    json = re.sub(r'",\s+', '", ', json)
     json = re.sub(r'"\s+\]', '"]', json)
     return json
 
