@@ -6,7 +6,7 @@ from utils import format_json
 
 class Player:
 
-    def __init__(self, name='Player', hand=None): #accepts gamemode
+    def __init__(self, name='Player', hand=None):  # accepts gamemode
         if hand is None:
             hand = []
 
@@ -20,7 +20,7 @@ class Player:
         self.name = name
         self.set_hand(hand)
 
-    def set_hand(self, hand, game_mode = 'All Trumps'):
+    def set_hand(self, hand, game_mode='All Trumps'):
         self.hand = hand
 
         if game_mode != 'No Trumps':
@@ -30,7 +30,7 @@ class Player:
         self.check_if_hand_contains_belots(self.hand, game_mode)
         self.check_if_hand_contains_higher_announcements()
 
-    def check_if_hand_contains_belots(self, hand, game_mode): #add game_mode
+    def check_if_hand_contains_belots(self, hand, game_mode):  # add game_mode
         belots = belots_modes[game_mode]
         for belot in belots:
             if set(belot).issubset(set(hand)):
@@ -118,35 +118,20 @@ class Player:
         self.trieces = []
         self.points = 0
 
-#need to fix below code:
-
     def to_dict(self):
         dicts = {
             "cards": self.hand,
             "announcements": self.get_announcements(),
-            "points": self.set_points()
+            "points": self.points
         }
 
         return dicts
-
-    def to_json(self):
-        dicts = {
-            "cards": self.hand,
-            "announcements": self.get_announcements(),
-            "points": self.set_points()
-        }
-
-        json_repr = json.dumps(dicts, indent=4)
-
-        return format_json(json_repr)
 
 
 def main():
     player = Player(name='Ivan')
     player.set_hand(['10s', '10c', 'Kh', 'Qh', '10d', '10h', 'Ah'])
     print(player.get_announcements())
-    print(player.to_json())
-    print(player.points)
 
 
 if __name__ == '__main__':

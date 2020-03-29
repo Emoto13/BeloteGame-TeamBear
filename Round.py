@@ -1,16 +1,20 @@
+from pprint import pprint
+from pretty_json import prettyjson
 from Player import Player
 from Team import Team
 from utils import best_announcement, format_json
 import json
 
+
 # TODO REFACTOR CLEAR SCORING FOR ROUND, TEAM AND PLAYER
 
 
 class Round:
-    def __init__(self, round_id, team1: Team = None, team2: Team = None):
+    def __init__(self, round_id, team1: Team = None, team2: Team = None, contract='All Trumps'):
         self.id = f'round {round_id}'
         self.team1 = team1
         self.team2 = team2
+        self.contract = contract
 
     def compare_best_announcements(self):
         team1_best_announcement = self.team1.best_announcement()
@@ -37,21 +41,27 @@ class Round:
 
     def to_dict(self):
         dicts = {
-            self.team1.team_name: self.team1.to_dict(),
-            self.team2.team_name: self.team2.to_dict()
-        }
+                    "contract": self.contract,
+                    self.team1.team_name: self.team1.to_dict(),
+                    self.team2.team_name: self.team2.to_dict()
+                }
 
         return dicts
 
     def to_json(self):
-        dicts = {self.id: {
+        dicts = {
             self.team1.team_name: self.team1.to_dict(),
-        },
-            self.team2.team_name: self.team2.to_dict()
+            self.team2.team_name: self.team2.to_dict(),
+            "contract": self.contract,
+
         }
+
         json_repr = json.dumps(dicts, indent=4)
         return format_json(json_repr)
 
+    @classmethod
+    def create_copy(cls):
+        return cls
 
 def main():
     player1 = Player(name='Marto')
@@ -71,8 +81,8 @@ def main():
     print(team2.best_announcement())
     print(r.compare_best_announcements())
     print(team1.player1.get_announcements(), team1.player2.get_announcements())
-    print(r.to_dict())
-    print(r.to_json())
+
+    print(prettyjson(r.to_dict()))
 
 
 if __name__ == '__main__':
