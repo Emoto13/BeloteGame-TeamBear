@@ -1,31 +1,36 @@
+import json
+
 from Player import Player
 from Team import Team
 from Round import Round
-from utils import game_end, clear_team_points
+from utils import game_end, clear_team_points, format_json
 from cards import cards
 from game_modes import game_modes
 from WriteToTxt import WriteToTxt
+from pretty_json import prettyjson
 import random
 
 
 class Game:
     def __init__(self, game_id: int, team1: Team = None, team2: Team = None,
                  write_to_txt: WriteToTxt = None):  # takes teams
-        self.id = f'game : {game_id}'
+        self.id = f'game {game_id}'
         self.team1 = team1
         self.team2 = team2
         self.write_to_txt = write_to_txt
+        self.json_dict = {}
 
     def play_game(self):
         round_id = 1
 
         while not game_end(self.team1, self.team2):
-            self.set_game()
+            contract = self.set_contractor()
 
-            r = Round(round_id, self.team1, self.team2)
+            r = Round(round_id, self.team1, self.team2, contract=contract)
             r.compare_best_announcements()
-
             self.write_to_txt.write_results(self.team1.team_points, self.team2.team_points, round_id)
+
+            self.json_dict[r.id] = r.to_dict()
 
             r.clear_scoring_for_round()
             round_id += 1
@@ -33,29 +38,21 @@ class Game:
         self.write_to_txt.write_game_end_output(self.team1, self.team2)
         clear_team_points(self.team1, self.team2)
 
-    def set_game(self):
-        game_mode = random.choice(game_modes)
+    def set_contractor(self):
+        contract = random.choice(game_modes)
         random.shuffle(cards)
-        self.team1.player1.set_hand(cards[:8], game_mode)
-        self.team1.player2.set_hand(cards[8:16], game_mode)
-        self.team2.player1.set_hand(cards[16:24], game_mode)
-        self.team2.player2.set_hand(cards[24:], game_mode)
+        self.team1.player1.set_hand(cards[:8], contract)
+        self.team1.player2.set_hand(cards[8:16], contract)
+        self.team2.player1.set_hand(cards[16:24], contract)
+        self.team2.player2.set_hand(cards[24:], contract)
+        return contract
 
-    # @staticmethod
-    # def to_dict(current_round):
-    #     dicts = {
-    #         current_round.id: current_round.to_dict()
-    #     }
-
-    #     return dicts
-
-    # def to_json(self):
-    #     dicts = {self.id: {
-    #         self.current_round.id: self.current_round.to_dict()
-    #     }
-    #     }
-    #     json_repr = json.dumps(dicts, indent=4)
-    #     return format_json(json_repr)
+    def to_json(self):
+        dicts = {self.id: self.json_dict}
+        json_repr = prettyjson(dicts)
+        json_repr = format_json(json_repr)
+        with open('data.json', 'w') as f:
+            f.write(json_repr)
 
 
 def main():
@@ -69,14 +66,15 @@ def main():
     w = WriteToTxt(team1, team2)
     g1 = Game(game_id=1, team1=team1, team2=team2, write_to_txt=w)
     g1.play_game()
+    g1.to_json()
     g2 = Game(game_id=2, team1=team1, team2=team2, write_to_txt=w)
     g2.play_game()
-    g3 = Game(game_id=3, team1=team1, team2=team2, write_to_txt=w)
-    g3.play_game()
+    g2.to_json()
+    # g3 = Game(game_id=3, team1=team1, team2=team2, write_to_txt=w)
+    # g3.play_game()
     # print(team2.player1.get_announcements())
     # print(team2.player2.get_announcements())
     # print(team2.team_points)
-    # print(g.to_json())
 
 
 if __name__ == '__main__':

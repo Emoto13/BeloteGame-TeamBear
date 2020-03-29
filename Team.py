@@ -31,30 +31,18 @@ class Team:
 
     def to_dict(self):
         dicts = {
-            self.player1.name: self.player1.to_dict(),
-            self.player2.name: self.player2.to_dict()
+                self.player1.name: self.player1.to_dict(),
+                self.player2.name: self.player2.to_dict()
         }
-
         return dicts
-
-    def to_json(self):
-        dicts = {self.team_name: {
-            self.player1.name: self.player1.to_dict(),
-        },
-            self.player2.name: self.player2.to_dict()
-        }
-        json_repr = json.dumps(dicts, indent=4)
-        return format_json(json_repr)
 
 
 def main():
-    player1 = Player(name='Gosho', hand = ['Jd', 'Kd', 'Qd', '10c', 'Ah'])
+    player1 = Player(name='Gosho', hand=['Jd', 'Kd', 'Qd', '10c', 'Ah'])
     player2 = Player(name='Pesho')
     player2.set_hand(['Jc', 'Kc', 'Qh', '10s', 'Ad'])
     tm = Team('Mechkite', player1, player2)
     # print(tm.best_announcement())
-    print(tm.set_points_for_team())
-    print(tm.team_points)
 
 
 if __name__ == '__main__':
