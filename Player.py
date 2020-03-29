@@ -110,7 +110,7 @@ class Player:
         if self.trieces: self.points += len(self.trieces) * 20
         return self.points
 
-    def clear_announcements_for_round(self):
+    def clear_scoring_for_round(self):
         self.belots = []
         self.carres = []
         self.quintes = []

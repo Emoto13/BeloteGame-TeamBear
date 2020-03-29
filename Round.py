@@ -3,6 +3,8 @@ from Team import Team
 from utils import best_announcement, format_json
 import json
 
+# TODO REFACTOR CLEAR SCORING FOR ROUND, TEAM AND PLAYER
+
 
 class Round:
     def __init__(self, round_id, team1: Team = None, team2: Team = None):
@@ -29,9 +31,9 @@ class Round:
         self.team1.set_points_for_team()
         self.team2.set_points_for_team()
 
-    def clear_announcements_for_round(self):
-        self.team1.clear_scorings_for_round()
-        self.team2.clear_scorings_for_round()
+    def clear_scoring_for_round(self):
+        self.team1.clear_scoring_for_round()
+        self.team2.clear_scoring_for_round()
 
     def to_dict(self):
         dicts = {

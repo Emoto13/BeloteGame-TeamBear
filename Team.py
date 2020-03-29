@@ -22,9 +22,12 @@ class Team:
     def set_points_for_team(self):
         self.team_points += self.player1.set_points() + self.player2.set_points()
 
-    def clear_scorings_for_round(self):
-        self.player1.clear_announcements_for_round()
-        self.player2.clear_announcements_for_round()
+    def clear_points(self):
+        self.team_points = 0
+
+    def clear_scoring_for_round(self):
+        self.player1.clear_scoring_for_round()
+        self.player2.clear_scoring_for_round()
 
     def to_dict(self):
         dicts = {
