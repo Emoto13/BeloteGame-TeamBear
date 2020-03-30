@@ -1,81 +1,81 @@
 {
-    "game 2": {
+    "game 1": {
         "round 1": {
-            "contract": "All Trumps",
+            "contract": "No Trumps",
             "Mechetata": {
                 "Marto": {
-                    "cards": ["7c", "8d", "Jc", "Ac", "8s", "Kd", "10c", "7d"],
+                    "cards": ["9d", "8c", "9s", "8s", "10d", "Jc", "Ah", "Qc"],
                     "announcements": [],
                     "points": 0
                 },
                 "Rado": {
-                    "cards": ["Jh", "10s", "Kh", "9h", "8c", "8h", "7s", "Qh"],
-                    "announcements": ["belot", "triece"],
-                    "points": 40
+                    "cards": ["Kh", "8d", "Ad", "As", "Kc", "9h", "7s", "9c"],
+                    "announcements": [],
+                    "points": 0
                 }
             },
             "Kotetata": {
                 "Gosho": {
-                    "cards": ["Ks", "Ah", "As", "Qc", "9s", "Kc", "Qd", "10h"],
-                    "announcements": ["belot"],
-                    "points": 20
+                    "cards": ["Qd", "7d", "7h", "8h", "10c", "Qs", "Jd", "7c"],
+                    "announcements": [],
+                    "points": 0
                 },
                 "Pesho": {
-                    "cards": ["10d", "7h", "Qs", "Js", "Jd", "9c", "9d", "Ad"],
+                    "cards": ["Ks", "Kd", "Qh", "Js", "10h", "Jh", "Ac", "10s"],
                     "announcements": [],
                     "points": 0
                 }
             }
         },
         "round 2": {
-            "contract": "Diamonds",
+            "contract": "Hearts",
             "Mechetata": {
                 "Marto": {
-                    "cards": ["7d", "8c", "7s", "7c", "Qs", "10h", "Ks", "Ac"],
+                    "cards": ["Jc", "As", "Jd", "Qh", "Qs", "10s", "7c", "7h"],
                     "announcements": [],
                     "points": 0
                 },
                 "Rado": {
-                    "cards": ["10d", "Ah", "9d", "8h", "9s", "9c", "Ad", "Jc"],
+                    "cards": ["10h", "Ks", "Qc", "8c", "Kc", "8h", "Js", "9c"],
                     "announcements": [],
                     "points": 0
                 }
             },
             "Kotetata": {
                 "Gosho": {
-                    "cards": ["Jd", "Qd", "Kc", "Js", "10c", "Kh", "Qh", "9h"],
+                    "cards": ["Qd", "Ad", "9d", "8s", "10c", "7d", "7s", "Jh"],
                     "announcements": [],
                     "points": 0
                 },
                 "Pesho": {
-                    "cards": ["10s", "Kd", "Qc", "Jh", "As", "7h", "8d", "8s"],
+                    "cards": ["9s", "Ah", "8d", "Kd", "9h", "Ac", "Kh", "10d"],
                     "announcements": [],
                     "points": 0
                 }
             }
         },
         "round 3": {
-            "contract": "Clubs",
+            "contract": "Spades",
             "Mechetata": {
                 "Marto": {
-                    "cards": ["Jd", "Jh", "9h", "9c", "8c", "Ad", "Qd", "8h"],
+                    "cards": ["7c", "Qd", "Ks", "Kd", "As", "Kh", "9s", "8c"],
                     "announcements": [],
                     "points": 0
                 },
                 "Rado": {
-                    "cards": ["As", "Ah", "Kc", "8d", "Jc", "7c", "10h", "Qc"],
-                    "announcements": ["belot", "triece"],
-                    "points": 40
+                    "cards": ["Js", "10d", "Jh", "9c", "9h", "Qc", "10c", "8h"],
+                    "announcements": [],
+                    "points": 0
                 }
             },
             "Kotetata": {
                 "Gosho": {
-                    "cards": ["10c", "Ac", "Ks", "7s", "10s", "Js", "9d", "Kd"],
+                    "cards": ["Qh", "Jc", "Ac", "8d", "7d", "Ah", "10h", "10s"],
                     "announcements": [],
                     "points": 0
                 },
                 "Pesho": {
-                    "cards": ["7h", "Qs", "10d", "Qh", "7d", "Kh", "9s", "8s"],
+                    "cards": ["Kc", "8s", "Qs", "Ad", "Jd", "7h", "7s", "9d"],
                     "announcements": [],
                     "points": 0
                 }
@@ -85,24 +85,24 @@
             "contract": "Hearts",
             "Mechetata": {
                 "Marto": {
-                    "cards": ["10c", "9h", "Ah", "9s", "10s", "10h", "7d", "7c"],
+                    "cards": ["7s", "Ac", "Jh", "Qh", "Jc", "9s", "9c", "9h"],
                     "announcements": [],
                     "points": 0
                 },
                 "Rado": {
-                    "cards": ["8c", "Qh", "Kd", "Qd", "Jd", "Kh", "As", "Ks"],
-                    "announcements": ["belot", "triece"],
-                    "points": 40
+                    "cards": ["Ah", "7d", "Qs", "Js", "10s", "10c", "Kh", "8s"],
+                    "announcements": ["triece"],
+                    "points": 20
                 }
             },
             "Kotetata": {
                 "Gosho": {
-                    "cards": ["7s", "Jh", "9d", "8d", "10d", "7h", "Kc", "8h"],
+                    "cards": ["Qd", "Qc", "10h", "Kd", "8d", "10d", "9d", "8c"],
                     "announcements": [],
                     "points": 0
                 },
                 "Pesho": {
-                    "cards": ["Ad", "Js", "Ac", "8s", "Jc", "9c", "Qc", "Qs"],
+                    "cards": ["Ks", "Ad", "8h", "Jd", "As", "7c", "Kc", "7h"],
                     "announcements": [],
                     "points": 0
                 }
@@ -112,188 +112,379 @@
             "contract": "Clubs",
             "Mechetata": {
                 "Marto": {
-                    "cards": ["Ks", "Jh", "7h", "9d", "Qd", "Ad", "Qc", "8c"],
-                    "announcements": [],
-                    "points": 0
+                    "cards": ["7c", "9d", "8c", "8h", "10h", "Qh", "Qd", "Jh"],
+                    "announcements": ["triece"],
+                    "points": 20
                 },
                 "Rado": {
-                    "cards": ["Kc", "Js", "10d", "Kd", "10s", "Kh", "9h", "7s"],
+                    "cards": ["Ac", "Qs", "7d", "Jd", "10c", "7s", "8d", "Kh"],
                     "announcements": [],
                     "points": 0
                 }
             },
             "Kotetata": {
                 "Gosho": {
-                    "cards": ["Ah", "Jc", "8s", "Jd", "Qs", "9c", "9s", "10h"],
+                    "cards": ["As", "Jc", "10s", "Ah", "9c", "Ad", "9h", "Kd"],
                     "announcements": [],
                     "points": 0
                 },
                 "Pesho": {
-                    "cards": ["10c", "Ac", "8d", "As", "7c", "Qh", "7d", "8h"],
-                    "announcements": [],
-                    "points": 0
+                    "cards": ["7h", "Js", "10d", "Ks", "8s", "Kc", "9s", "Qc"],
+                    "announcements": ["belot"],
+                    "points": 20
                 }
             }
         },
         "round 6": {
-            "contract": "Spades",
+            "contract": "Clubs",
             "Mechetata": {
                 "Marto": {
-                    "cards": ["7s", "Ad", "Ks", "Qd", "Qh", "7c", "8s", "Ah"],
+                    "cards": ["Ac", "7s", "Qs", "7d", "Qh", "9c", "10s", "Kc"],
                     "announcements": [],
                     "points": 0
                 },
                 "Rado": {
-                    "cards": ["10c", "Kc", "7d", "9d", "9h", "10d", "Ac", "8h"],
-                    "announcements": [],
-                    "points": 0
+                    "cards": ["Qd", "9h", "Js", "Kd", "10d", "Jd", "As", "8s"],
+                    "announcements": ["quarte"],
+                    "points": 50
                 }
             },
             "Kotetata": {
                 "Gosho": {
-                    "cards": ["Jc", "8c", "9c", "Jd", "Qc", "7h", "Js", "As"],
+                    "cards": ["7c", "Jc", "9s", "Ah", "Kh", "10h", "8c", "9d"],
                     "announcements": [],
                     "points": 0
                 },
                 "Pesho": {
-                    "cards": ["Jh", "Qs", "9s", "8d", "10h", "Kd", "Kh", "10s"],
+                    "cards": ["Ad", "7h", "8h", "Qc", "Jh", "Ks", "8d", "10c"],
                     "announcements": [],
                     "points": 0
                 }
             }
         },
         "round 7": {
-            "contract": "No Trumps",
+            "contract": "All Trumps",
             "Mechetata": {
                 "Marto": {
-                    "cards": ["Jh", "Qc", "9s", "Qs", "As", "Ks", "7d", "7h"],
+                    "cards": ["9d", "Js", "Qh", "Ac", "7s", "10h", "7d", "9c"],
                     "announcements": [],
                     "points": 0
                 },
                 "Rado": {
-                    "cards": ["7s", "Ad", "8h", "Kc", "9d", "Js", "Jd", "8d"],
+                    "cards": ["Kc", "Qd", "Jc", "Ks", "Qc", "Kd", "8s", "10c"],
+                    "announcements": ["belot", "belot", "quarte"],
+                    "points": 90
+                }
+            },
+            "Kotetata": {
+                "Gosho": {
+                    "cards": ["Kh", "9h", "9s", "Jd", "10d", "8d", "7h", "Qs"],
+                    "announcements": [],
+                    "points": 0
+                },
+                "Pesho": {
+                    "cards": ["Ad", "8c", "Jh", "8h", "7c", "As", "10s", "Ah"],
+                    "announcements": [],
+                    "points": 0
+                }
+            }
+        }
+    },
+    "game 2": {
+        "round 1": {
+            "contract": "Hearts",
+            "Mechetata": {
+                "Marto": {
+                    "cards": ["Kh", "Qd", "8c", "7c", "8h", "Kc", "Jh", "Ac"],
+                    "announcements": [],
+                    "points": 0
+                },
+                "Rado": {
+                    "cards": ["9s", "Qs", "9h", "Qh", "Jc", "Js", "7s", "Jd"],
                     "announcements": [],
                     "points": 0
                 }
             },
             "Kotetata": {
                 "Gosho": {
-                    "cards": ["10s", "Ah", "Jc", "10c", "9c", "Kd", "8c", "Qh"],
+                    "cards": ["10d", "Ks", "Qc", "Kd", "9d", "As", "10h", "10c"],
                     "announcements": [],
                     "points": 0
                 },
                 "Pesho": {
-                    "cards": ["Kh", "10h", "9h", "10d", "Ac", "Qd", "8s", "7c"],
+                    "cards": ["8d", "10s", "8s", "Ah", "7h", "9c", "Ad", "7d"],
+                    "announcements": [],
+                    "points": 0
+                }
+            }
+        },
+        "round 2": {
+            "contract": "Spades",
+            "Mechetata": {
+                "Marto": {
+                    "cards": ["As", "Qc", "9c", "8c", "10s", "Ks", "8d", "Ac"],
+                    "announcements": [],
+                    "points": 0
+                },
+                "Rado": {
+                    "cards": ["Qs", "Jd", "Qd", "Qh", "9h", "10d", "Kh", "7d"],
+                    "announcements": ["triece"],
+                    "points": 20
+                }
+            },
+            "Kotetata": {
+                "Gosho": {
+                    "cards": ["7c", "10h", "9s", "Ad", "Kd", "8h", "Jh", "9d"],
+                    "announcements": [],
+                    "points": 0
+                },
+                "Pesho": {
+                    "cards": ["7h", "Js", "8s", "Jc", "Ah", "7s", "10c", "Kc"],
+                    "announcements": [],
+                    "points": 0
+                }
+            }
+        },
+        "round 3": {
+            "contract": "Diamonds",
+            "Mechetata": {
+                "Marto": {
+                    "cards": ["8d", "Ks", "Qd", "Kd", "9s", "Ac", "9d", "Ah"],
+                    "announcements": ["belot"],
+                    "points": 20
+                },
+                "Rado": {
+                    "cards": ["10s", "10c", "Jc", "Ad", "Qs", "Jh", "7d", "As"],
+                    "announcements": [],
+                    "points": 0
+                }
+            },
+            "Kotetata": {
+                "Gosho": {
+                    "cards": ["Qc", "8c", "Kc", "7c", "7h", "7s", "10d", "8s"],
+                    "announcements": [],
+                    "points": 0
+                },
+                "Pesho": {
+                    "cards": ["Qh", "10h", "Kh", "9h", "8h", "9c", "Js", "Jd"],
+                    "announcements": ["triece"],
+                    "points": 20
+                }
+            }
+        },
+        "round 4": {
+            "contract": "No Trumps",
+            "Mechetata": {
+                "Marto": {
+                    "cards": ["Jd", "8s", "10h", "Qh", "10c", "9c", "Kd", "Ac"],
+                    "announcements": [],
+                    "points": 0
+                },
+                "Rado": {
+                    "cards": ["8d", "Qs", "Qd", "Ks", "Jh", "10d", "7s", "Qc"],
+                    "announcements": [],
+                    "points": 0
+                }
+            },
+            "Kotetata": {
+                "Gosho": {
+                    "cards": ["9d", "8h", "Kh", "9h", "Ah", "7d", "Js", "9s"],
+                    "announcements": [],
+                    "points": 0
+                },
+                "Pesho": {
+                    "cards": ["Ad", "10s", "As", "8c", "7c", "Kc", "Jc", "7h"],
+                    "announcements": [],
+                    "points": 0
+                }
+            }
+        },
+        "round 5": {
+            "contract": "Spades",
+            "Mechetata": {
+                "Marto": {
+                    "cards": ["7h", "Kh", "8d", "8h", "Qc", "Kd", "7d", "As"],
+                    "announcements": [],
+                    "points": 0
+                },
+                "Rado": {
+                    "cards": ["Jc", "Ad", "Ac", "Kc", "Ah", "8c", "7s", "Qs"],
+                    "announcements": [],
+                    "points": 0
+                }
+            },
+            "Kotetata": {
+                "Gosho": {
+                    "cards": ["10h", "10d", "7c", "9h", "Qh", "9d", "8s", "Qd"],
+                    "announcements": [],
+                    "points": 0
+                },
+                "Pesho": {
+                    "cards": ["10c", "9c", "10s", "Ks", "Jd", "9s", "Js", "Jh"],
+                    "announcements": ["triece"],
+                    "points": 20
+                }
+            }
+        },
+        "round 6": {
+            "contract": "No Trumps",
+            "Mechetata": {
+                "Marto": {
+                    "cards": ["Jd", "9h", "Ad", "Kc", "Jh", "Qc", "10d", "Jc"],
+                    "announcements": [],
+                    "points": 0
+                },
+                "Rado": {
+                    "cards": ["10h", "Kd", "8c", "Ac", "Qh", "Qd", "8h", "Ks"],
+                    "announcements": [],
+                    "points": 0
+                }
+            },
+            "Kotetata": {
+                "Gosho": {
+                    "cards": ["Qs", "Kh", "9c", "As", "8s", "Js", "7h", "7c"],
+                    "announcements": [],
+                    "points": 0
+                },
+                "Pesho": {
+                    "cards": ["10c", "7s", "Ah", "9d", "10s", "7d", "8d", "9s"],
+                    "announcements": [],
+                    "points": 0
+                }
+            }
+        },
+        "round 7": {
+            "contract": "Hearts",
+            "Mechetata": {
+                "Marto": {
+                    "cards": ["Jc", "9d", "As", "7h", "Jd", "9s", "7s", "10d"],
+                    "announcements": ["triece"],
+                    "points": 20
+                },
+                "Rado": {
+                    "cards": ["8c", "8s", "Kc", "Kd", "9h", "7c", "10s", "Qs"],
+                    "announcements": [],
+                    "points": 0
+                }
+            },
+            "Kotetata": {
+                "Gosho": {
+                    "cards": ["7d", "Qc", "10h", "Kh", "Js", "Jh", "10c", "Ac"],
+                    "announcements": [],
+                    "points": 0
+                },
+                "Pesho": {
+                    "cards": ["8d", "8h", "Ad", "9c", "Ah", "Ks", "Qh", "Qd"],
                     "announcements": [],
                     "points": 0
                 }
             }
         },
         "round 8": {
-            "contract": "Hearts",
+            "contract": "Clubs",
             "Mechetata": {
                 "Marto": {
-                    "cards": ["Ac", "8c", "9c", "10h", "Ad", "Ah", "Qd", "Qc"],
+                    "cards": ["Jh", "Ks", "Kc", "Qd", "Ah", "9d", "10d", "Jc"],
                     "announcements": [],
                     "points": 0
                 },
                 "Rado": {
-                    "cards": ["9s", "9h", "Kd", "7h", "Kc", "7d", "Qh", "Jd"],
+                    "cards": ["Kh", "7d", "8d", "7h", "10h", "9c", "Qc", "Jd"],
                     "announcements": [],
                     "points": 0
                 }
             },
             "Kotetata": {
                 "Gosho": {
-                    "cards": ["9d", "Qs", "Jh", "8d", "10c", "8s", "Kh", "As"],
+                    "cards": ["Ac", "Js", "Qs", "Qh", "As", "8s", "10c", "8c"],
                     "announcements": [],
                     "points": 0
                 },
                 "Pesho": {
-                    "cards": ["10s", "7c", "Js", "Ks", "10d", "8h", "Jc", "7s"],
+                    "cards": ["Ad", "9s", "9h", "Kd", "7s", "8h", "10s", "7c"],
                     "announcements": [],
                     "points": 0
                 }
             }
         },
         "round 9": {
-            "contract": "No Trumps",
+            "contract": "Spades",
             "Mechetata": {
                 "Marto": {
-                    "cards": ["Kd", "Jd", "Qh", "8d", "Qd", "Qc", "Jc", "Js"],
-                    "announcements": [],
-                    "points": 0
+                    "cards": ["Kh", "Kd", "9s", "7d", "Js", "Qc", "Ks", "Qs"],
+                    "announcements": ["belot", "triece"],
+                    "points": 40
                 },
                 "Rado": {
-                    "cards": ["7h", "7d", "8h", "As", "Qs", "10s", "9c", "Ad"],
+                    "cards": ["Ah", "10h", "Jd", "9h", "8s", "8c", "As", "Qd"],
                     "announcements": [],
                     "points": 0
                 }
             },
             "Kotetata": {
                 "Gosho": {
-                    "cards": ["9s", "Ac", "8c", "7c", "8s", "10h", "9h", "Kh"],
+                    "cards": ["7s", "9d", "7h", "Qh", "10d", "Jh", "7c", "10c"],
                     "announcements": [],
                     "points": 0
                 },
                 "Pesho": {
-                    "cards": ["9d", "7s", "Jh", "Ah", "Ks", "Kc", "10c", "10d"],
+                    "cards": ["8d", "Jc", "10s", "8h", "Ac", "Ad", "9c", "Kc"],
                     "announcements": [],
                     "points": 0
                 }
             }
         },
         "round 10": {
-            "contract": "No Trumps",
+            "contract": "Diamonds",
             "Mechetata": {
                 "Marto": {
-                    "cards": ["9h", "7d", "Js", "10s", "8s", "As", "8d", "9d"],
+                    "cards": ["Jd", "9h", "10c", "10s", "Kc", "8h", "Ks", "9c"],
                     "announcements": [],
                     "points": 0
                 },
                 "Rado": {
-                    "cards": ["10d", "9s", "Ks", "7s", "Qd", "Kh", "8h", "7c"],
+                    "cards": ["9d", "Jh", "Ac", "Ah", "Kd", "9s", "10d", "Kh"],
                     "announcements": [],
                     "points": 0
                 }
             },
             "Kotetata": {
                 "Gosho": {
-                    "cards": ["7h", "Ah", "9c", "Jc", "Kc", "Qc", "Kd", "Qh"],
+                    "cards": ["7c", "Js", "Qd", "8s", "7s", "Ad", "7h", "Qs"],
                     "announcements": [],
                     "points": 0
                 },
                 "Pesho": {
-                    "cards": ["10h", "Ad", "Qs", "Jh", "10c", "8c", "Jd", "Ac"],
+                    "cards": ["Qc", "Qh", "8d", "Jc", "7d", "10h", "8c", "As"],
                     "announcements": [],
                     "points": 0
                 }
             }
         },
         "round 11": {
-            "contract": "Hearts",
+            "contract": "Diamonds",
             "Mechetata": {
                 "Marto": {
-                    "cards": ["8c", "10h", "8d", "Ah", "8h", "Qh", "Ac", "7c"],
+                    "cards": ["8d", "9h", "Ah", "7c", "9s", "10s", "Kh", "8h"],
                     "announcements": [],
                     "points": 0
                 },
                 "Rado": {
-                    "cards": ["7h", "9s", "Jh", "Kd", "Qc", "Kh", "10d", "Qd"],
+                    "cards": ["Jh", "Jd", "10c", "Kd", "9d", "10d", "Ac", "Ks"],
                     "announcements": [],
                     "points": 0
                 }
             },
             "Kotetata": {
                 "Gosho": {
-                    "cards": ["Js", "9c", "10c", "7d", "8s", "9h", "7s", "As"],
+                    "cards": ["Ad", "8s", "7d", "10h", "7s", "Qh", "As", "9c"],
                     "announcements": [],
                     "points": 0
                 },
                 "Pesho": {
-                    "cards": ["9d", "Qs", "10s", "Ad", "Jd", "Kc", "Ks", "Jc"],
-                    "announcements": [],
-                    "points": 0
+                    "cards": ["8c", "Kc", "Qd", "Qs", "Jc", "Qc", "7h", "Js"],
+                    "announcements": ["triece"],
+                    "points": 20
                 }
             }
         },
@@ -301,24 +492,24 @@
             "contract": "Hearts",
             "Mechetata": {
                 "Marto": {
-                    "cards": ["Kd", "Ad", "As", "Ks", "Qh", "9s", "9d", "Qd"],
-                    "announcements": ["triece"],
-                    "points": 20
+                    "cards": ["Qd", "10s", "Qc", "Jh", "Qs", "9c", "Qh", "Kd"],
+                    "announcements": ["carre"],
+                    "points": 100
                 },
                 "Rado": {
-                    "cards": ["7c", "10d", "Kh", "9h", "10s", "Jc", "Qs", "Js"],
-                    "announcements": ["triece"],
-                    "points": 20
+                    "cards": ["Kc", "7c", "8d", "10h", "9d", "Ad", "9s", "10c"],
+                    "announcements": [],
+                    "points": 0
                 }
             },
             "Kotetata": {
                 "Gosho": {
-                    "cards": ["Kc", "8h", "Jh", "Jd", "7h", "Ah", "8d", "Ac"],
+                    "cards": ["Jd", "7s", "7d", "7h", "Jc", "As", "10d", "8c"],
                     "announcements": [],
                     "points": 0
                 },
                 "Pesho": {
-                    "cards": ["8s", "9c", "Qc", "7d", "10c", "10h", "7s", "8c"],
+                    "cards": ["Ah", "8s", "Ac", "9h", "Kh", "Ks", "8h", "Js"],
                     "announcements": [],
                     "points": 0
                 }
