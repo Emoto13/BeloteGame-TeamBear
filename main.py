@@ -1,4 +1,3 @@
-import sys
 from Player import Player
 from Team import Team
 from utils import is_match_won
@@ -7,30 +6,35 @@ from WriteToTxt import WriteToTxt
 from WriteToJSON import WriteToJSON
 
 
-def input_data():
-    # team1 = input('Team 1 name: ')
-    # team2 = input('Team 2 name: ')
-    team1 = 'Mechkite'
-    team2 = 'Kotkite'
-    teams = [team1, team2]
+def read_teams_names():
+    read_team1_name = input('Team 1 name: ')
+    read_team2_name = input('Team 2 name: ')
+    team1_name = read_team1_name
+    team2_name = read_team2_name
 
-    # players_team1 = input(f'"{team1}" players: ')
-    # players_team2 = input(f'"{team2}" players: ')
-    # players_team1 = players_team1.split(',')
-    # players_team2 = players_team2.split(',')
-    players_team1 = ['Marto', 'Rado']
-    players_team2 = ['Gosho', 'Pesho']
-    players = players_team1 + players_team2
+    return team1_name, team2_name
 
-    data = [teams, players]
 
-    return data
+def read_player_names(team1_name, team2_name):
+    read_players_team1_names = input(f'"{team1_name}" players: (format -> name, name) ')
+    read_players_team2_names = input(f'"{team2_name}" players: (format -> name, name) ')
+    team1_players_names = read_players_team1_names.split(', ')
+    team2_players_names = read_players_team2_names.split(', ')
+
+    team1_player1_name = team1_players_names[0]
+    team1_player2_name = team1_players_names[1]
+
+    team2_player1_name = team2_players_names[0]
+    team2_player2_name = team2_players_names[1]
+
+    return team1_player1_name, team1_player2_name, team2_player1_name, team2_player2_name
 
 
 def main():
     game_id = 1
 
-    teams, players = input_data()
+    teams = read_teams_names()
+    players = read_player_names(teams[0], teams[1])
 
     player1 = Player(players[0])
     player2 = Player(players[1])
