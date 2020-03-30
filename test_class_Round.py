@@ -15,7 +15,7 @@ class TestRoundClass(unittest.TestCase):
         team2 = Team(player1=player1, player2=player2)
         r = Round(round_id=1, team1=team1, team2=team2)
 
-        self.assertEqual(r.id, 'round 1')
+        self.assertEqual(r.round_id, 'round 1')
         self.assertEqual(r.team1, team1)
         self.assertEqual(r.team2, team2)
 

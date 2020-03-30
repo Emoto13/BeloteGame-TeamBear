@@ -7,7 +7,7 @@ import json
 
 class Round:
     def __init__(self, round_id: int = 1, team1: Team = None, team2: Team = None, contract='All Trumps'):
-        self.id = f'round {round_id}'
+        self.round_id = f'round {round_id}'
         self.team1 = team1
         self.team2 = team2
         self.contract = contract

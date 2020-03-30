@@ -14,12 +14,12 @@ import random
 class Game:
     def __init__(self, game_id: int, team1: Team = None, team2: Team = None,
                  write_to_txt: WriteToTxt = None, write_to_json : WriteToJSON = None):  # takes teams
-        self.id = f'game {game_id}'
+        self.game_id = f'game {game_id}'
         self.team1 = team1
         self.team2 = team2
         self.write_to_txt = write_to_txt
         self.write_to_json = write_to_json
-        self.json_dict = {}
+        self.dicts = {}
 
     def play_game(self):
         round_id = 1
@@ -31,12 +31,13 @@ class Game:
             r.compare_best_announcements()
 
             self.write_to_txt.write_results(self.team1.team_points, self.team2.team_points, round_id)
+            self.dicts[r.round_id] = r.to_dict()
 
             r.clear_scoring_for_round()
             round_id += 1
 
         self.write_to_txt.write_game_end_output(self.team1, self.team2)
-        self.write_to_json.add_game(self.id, self.to_dict())
+        self.write_to_json.add_game(self.game_id, self.to_dict())
 
         clear_team_points(self.team1, self.team2)
 
@@ -50,10 +51,10 @@ class Game:
         return contract
 
     def to_dict(self):
-        return self.json_dict
+        return self.dicts
 
     def to_json(self):
-        dicts = {self.id: self.json_dict}
+        dicts = {self.game_id: self.dicts}
         json_repr = prettyjson(dicts)
         json_repr = format_json(json_repr)
         return json_repr
