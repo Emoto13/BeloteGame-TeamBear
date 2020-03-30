@@ -1,4 +1,3 @@
-from pprint import pprint
 from pretty_json import prettyjson
 from Player import Player
 from Team import Team
@@ -6,11 +5,8 @@ from utils import best_announcement, format_json
 import json
 
 
-# TODO REFACTOR CLEAR SCORING FOR ROUND, TEAM AND PLAYER
-
-
 class Round:
-    def __init__(self, round_id, team1: Team = None, team2: Team = None, contract='All Trumps'):
+    def __init__(self, round_id: int = 1, team1: Team = None, team2: Team = None, contract='All Trumps'):
         self.id = f'round {round_id}'
         self.team1 = team1
         self.team2 = team2
@@ -41,10 +37,10 @@ class Round:
 
     def to_dict(self):
         dicts = {
-                    "contract": self.contract,
-                    self.team1.team_name: self.team1.to_dict(),
-                    self.team2.team_name: self.team2.to_dict()
-                }
+            "contract": self.contract,
+            self.team1.team_name: self.team1.to_dict(),
+            self.team2.team_name: self.team2.to_dict()
+        }
 
         return dicts
 
@@ -62,6 +58,7 @@ class Round:
     @classmethod
     def create_copy(cls):
         return cls
+
 
 def main():
     player1 = Player(name='Marto')
