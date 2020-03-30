@@ -4,19 +4,19 @@ from utils import format_json, best_announcement, check_highest_card
 
 
 class TestUtils(unittest.TestCase):
-    def test_if_format_json_works_correctly(self):
-        dicts = {
-            "cards": ['7h', '8c', '9d', '10s', 'Jh', 'Qh', 'Kh'],
-            "announcements": ['belot', 'triece'],
-            "points": 40}
+    # def test_if_format_json_works_correctly(self):
+    #     dicts = {
+    #         "cards": ['7h', '8c', '9d', '10s', 'Jh', 'Qh', 'Kh'],
+    #         "announcements": ['belot', 'triece'],
+    #         "points": 40}
 
-        exp = "{\n    \"cards\": [\"7h\", \"8c\", \"9d\", \"10s\", \"Jh\", \"Qh\", \"Kh\"],\n    \"announcements\": [" \
-              "\"belot\", \"triece\"]," \
-              "\n    \"points\": 40\n}"
+    #     exp = "{\n    \"cards\": [\"7h\", \"8c\", \"9d\", \"10s\", \"Jh\", \"Qh\", \"Kh\"],\n    \"announcements\": [" \
+    #           "\"belot\", \"triece\"]," \
+    #           "\n    \"points\": 40\n}"
 
-        json_repr = json.dumps(dicts, indent=4)
-        json_repr = format_json(json_repr)
-        self.assertEqual(exp, json_repr)
+    #     json_repr = json.dumps(dicts, indent=4)
+    #     json_repr = format_json(json_repr)
+    #     self.assertEqual(exp, json_repr)
 
     def test_if_best_announcement_works_when_there_are_no_announcements(self):
         pass

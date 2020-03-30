@@ -11,23 +11,37 @@ class TestPlayerClass(unittest.TestCase):
         self.assertEqual(player.name, name)
         self.assertEqual(player.hand, hand)
 
-    def test_check_if_hand_contains_belots_works_with_belots(self):
+    def test_check_if_hand_contains_belots_works_with_matching_belots_and_contract(self):
         player = Player()
-        player.check_if_hand_contains_belots(['Qs', 'Ks'])
+        player.check_if_hand_contains_belots(['Qs', 'Ks'], 'Spades')
 
         self.assertEqual(player.points, 20)
         self.assertEqual(player.belots, [['Qs', 'Ks']])
 
-    def test_check_if_hand_contains_multiple_belots(self):
+    def test_check_if_hand_contains_belots_works_with_not_matching_belots_and_contract(self):
         player = Player()
-        player.check_if_hand_contains_belots(['Qs', 'Ks', 'Qh', 'Kh'])
+        player.check_if_hand_contains_belots(['Qs', 'Ks'], 'Hearts')
+
+        self.assertEqual(player.points, 0)
+        self.assertEqual(player.belots, [])
+
+    def test_check_if_hand_contains_multiple_belots_and_contract_covers_only_one(self):
+        player = Player()
+        player.check_if_hand_contains_belots(['Qs', 'Ks', 'Qh', 'Kh'],'Hearts')
+
+        self.assertEqual(player.points, 20)
+        self.assertEqual(player.belots, [['Qh', 'Kh']])
+
+    def test_check_if_hand_contains_multiple_belots_and_contract_is_All_Trumps(self):
+        player = Player()
+        player.check_if_hand_contains_belots(['Qs', 'Ks', 'Qh', 'Kh'],'All Trumps')
 
         self.assertEqual(player.points, 40)
         self.assertEqual(player.belots, [['Qs', 'Ks'], ['Qh', 'Kh']])
 
     def test_check_if_hand_has_zero_belots(self):
         pl = Player()
-        pl.check_if_hand_contains_belots(['7s', '8d', '9s', '10c', 'Qd', 'Qh', 'As', 'Ah'])
+        pl.check_if_hand_contains_belots(['7s', '8d', '9s', '10c', 'Qd', 'Qh', 'As', 'Ah'], 'All Trumps')
 
         self.assertEqual(pl.points, 0)
         self.assertEqual(pl.belots, [])
@@ -131,14 +145,14 @@ class TestPlayerClass(unittest.TestCase):
     # add edge cases to this test
     def test_if_get_announcements_works_correctly_when_there_are_different_announcements(self):
         player = Player()
-        player.set_hand(['10c', 'Jc', 'Qc', '10h', 'Jh', 'Qh', 'Kh'])
+        player.set_hand(['10c', 'Jc', 'Qc', '10h', 'Jh', 'Qh', 'Kh'], 'All Trumps')
         res = ['belot', 'quarte', 'triece']
 
         self.assertEqual(res, player.get_announcements())
 
     def test_if_get_announcements_works_correctly_when_there_are_announcements_of_same_type(self):
         player = Player()
-        player.set_hand(['10c', 'Jc', 'Qc', 'Jh', 'Qh', 'Kh'])
+        player.set_hand(['10c', 'Jc', 'Qc', 'Jh', 'Qh', 'Kh'], 'All Trumps')
         res = ['belot', 'triece', 'triece']
 
         self.assertEqual(res, player.get_announcements())
