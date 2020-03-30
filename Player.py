@@ -20,18 +20,18 @@ class Player:
         self.name = name
         self.set_hand(hand)
 
-    def set_hand(self, hand, game_mode='All Trumps'):
+    def set_hand(self, hand, contract='All Trumps'):
         self.hand = hand
 
-        if game_mode != 'No Trumps':
-            self.set_declarations(game_mode)
+        if contract != 'No Trumps':
+            self.set_declarations(contract)
 
-    def set_declarations(self, game_mode):
-        self.check_if_hand_contains_belots(self.hand, game_mode)
+    def set_declarations(self, contract):
+        self.check_if_hand_contains_belots(self.hand, contract)
         self.check_if_hand_contains_higher_announcements()
 
-    def check_if_hand_contains_belots(self, hand, game_mode):  # add game_mode
-        belots = belots_modes[game_mode]
+    def check_if_hand_contains_belots(self, hand, contract):
+        belots = belots_modes[contract]
         for belot in belots:
             if set(belot).issubset(set(hand)):
                 self.belots.append(belot)
