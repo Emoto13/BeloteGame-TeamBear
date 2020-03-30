@@ -3,7 +3,7 @@ from Team import Team
 from Round import Round
 from utils import is_game_won, clear_team_points, format_json
 from cards import cards
-from game_modes import game_modes
+from contracts import contracts
 from WriteToTxt import WriteToTxt
 from pretty_json import prettyjson
 from WriteToJSON import WriteToJSON
@@ -42,7 +42,7 @@ class Game:
         clear_team_points(self.team1, self.team2)
 
     def set_contract(self):
-        contract = random.choice(game_modes)
+        contract = random.choice(contracts)
         random.shuffle(cards)
         self.team1.player1.set_hand(cards[:8], contract)
         self.team1.player2.set_hand(cards[8:16], contract)
