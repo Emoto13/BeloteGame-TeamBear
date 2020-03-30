@@ -45,7 +45,7 @@ def highest_card(entity_best_announcement):
     return power_of_cards[entity_best_announcement[-1][:-1]]
 
 
-def game_end(team1, team2):
+def is_game_won(team1, team2):
     team1_points = team1.team_points
     team2_points = team2.team_points
 
@@ -67,3 +67,9 @@ def game_end(team1, team2):
 def clear_team_points(team1, team2):
     team1.clear_points()
     team2.clear_points()
+
+
+def is_match_won(team1_games_won, team2_games_won):
+    if team1_games_won == 2 or team2_games_won == 2:
+        return True
+    return False
