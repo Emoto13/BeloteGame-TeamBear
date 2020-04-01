@@ -1,6 +1,5 @@
-from Player import Player
-import json
-from utils import format_json, best_announcement
+from entities.player import Player
+from utils import best_announcement
 
 
 class Team:

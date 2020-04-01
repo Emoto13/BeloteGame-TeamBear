@@ -1,6 +1,6 @@
 import unittest
-from Player import Player
-from Team import Team
+from entities.player import Player
+from entities.team import Team
 
 
 class TestTeamClass(unittest.TestCase):

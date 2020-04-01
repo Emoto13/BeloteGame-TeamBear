@@ -1,6 +1,6 @@
-from pretty_json import prettyjson
-from Player import Player
-from Team import Team
+from file_writers.pretty_json import prettyjson
+from entities.player import Player
+from entities.team import Team
 from utils import best_announcement, format_json
 import json
 

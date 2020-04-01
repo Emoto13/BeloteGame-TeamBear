@@ -1,12 +1,11 @@
-from Player import Player
-from Team import Team
-from Round import Round
+from entities.player import Player
+from entities.team import Team
+from entities.round import Round
 from utils import is_game_won, clear_team_points, format_json
-from cards import cards
-from contracts import contracts
-from WriteToTxt import WriteToTxt
-from pretty_json import prettyjson
-from WriteToJSON import WriteToJSON
+from cards_and_announcements.cards import cards
+from cards_and_announcements.contracts import contracts
+from file_writers.write_to_txt import WriteToTxt
+from file_writers.pretty_json import prettyjson
 
 import random
 

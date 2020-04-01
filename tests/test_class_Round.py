@@ -1,7 +1,7 @@
 import unittest
-from Player import Player
-from Team import Team
-from Round import Round
+from entities.player import Player
+from entities.team import Team
+from entities.round import Round
 
 
 class TestRoundClass(unittest.TestCase):

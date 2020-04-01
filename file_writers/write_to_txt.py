@@ -1,5 +1,5 @@
-from Team import Team
-from write_to_txt_helpers import format_team_names, format_output_for_first_and_last_rounds, \
+from entities.team import Team
+from file_writers.write_to_txt_helpers import format_team_names, format_output_for_first_and_last_rounds, \
     format_middle_round_output, \
     format_game_end_output
 

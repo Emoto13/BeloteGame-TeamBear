@@ -1,4 +1,4 @@
-from pretty_json import prettyjson
+from file_writers.pretty_json import prettyjson
 from utils import format_json
 
 

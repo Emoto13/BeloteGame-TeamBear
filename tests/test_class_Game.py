@@ -1,7 +1,7 @@
 import unittest
-from Player import Player
-from Team import Team
-from Game import Game
+from entities.player import Player
+from entities.team import Team
+from entities.game import Game
 
 
 class TestGameClass(unittest.TestCase):

@@ -1,7 +1,5 @@
-from announcements import carres, quintes, quartes, trieces
-from belots import belots_modes
-import json
-from utils import format_json
+from cards_and_announcements.announcements import carres, quintes, quartes, trieces
+from cards_and_announcements.belots import belots_modes
 
 
 class Player:

@@ -1,9 +1,5 @@
 import unittest
-from Player import Player
-from Team import Team
-from Game import Game
-from WriteToTxt import WriteToTxt
-from write_to_txt_helpers import format_team_names, format_output_for_first_and_last_rounds, format_middle_round_output, \
+from file_writers.write_to_txt_helpers import format_team_names, format_output_for_first_and_last_rounds, format_middle_round_output, \
  format_game_end_output, format_horizontal_separator, format_output_for_first_and_last_rounds_team1, \
  format_output_for_first_and_last_rounds_team2, format_output_team1, format_output_team2, \
  handle_winner_output
