@@ -31,8 +31,6 @@ def read_player_names(team1_name, team2_name):
 
 
 def main():
-    game_id = 1
-
     teams = read_teams_names()
     players = read_player_names(teams[0], teams[1])
 
@@ -47,9 +45,10 @@ def main():
     write_to_txt = WriteToTxt(team1, team2)
     write_to_json = WriteToJSON()
 
+    game_id = 1
     while not is_match_won(team1.games_won, team2.games_won):
-        g = Game(game_id=game_id, team1=team1, team2=team2, write_to_txt=write_to_txt, write_to_json=write_to_json)
-        g.play_game()
+        g = Game(game_id=game_id, team1=team1, team2=team2)
+        g.play_game(write_to_txt, write_to_json)
         game_id += 1
 
 

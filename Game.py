@@ -12,32 +12,29 @@ import random
 
 
 class Game:
-    def __init__(self, game_id: int, team1: Team = None, team2: Team = None,
-                 write_to_txt: WriteToTxt = None, write_to_json : WriteToJSON = None):  # takes teams
+    def __init__(self, game_id: int, team1: Team = None, team2: Team = None):  # takes teams
         self.game_id = f'game {game_id}'
         self.team1 = team1
         self.team2 = team2
-        self.write_to_txt = write_to_txt
-        self.write_to_json = write_to_json
         self.dicts = {}
 
-    def play_game(self):
+    def play_game(self, write_to_txt, write_to_json):
         round_id = 1
 
         while not is_game_won(self.team1, self.team2):
             contract = self.set_contract()
 
-            r = Round(round_id, self.team1, self.team2, contract=contract)
+            r = Round(round_id=round_id, team1=self.team1, team2=self.team2, contract=contract)
             r.compare_best_announcements()
 
-            self.write_to_txt.write_results(self.team1.team_points, self.team2.team_points, round_id)
+            write_to_txt.write_results(self.team1.team_points, self.team2.team_points, round_id)
             self.dicts[r.round_id] = r.to_dict()
 
             r.clear_scoring_for_round()
             round_id += 1
 
-        self.write_to_txt.write_game_end_output(self.team1, self.team2)
-        self.write_to_json.add_game(self.game_id, self.to_dict())
+        write_to_txt.write_game_end_output(self.team1, self.team2)
+        write_to_json.add_game(self.game_id, self.to_dict())
 
         clear_team_points(self.team1, self.team2)
 
