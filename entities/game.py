@@ -2,8 +2,8 @@ from entities.player import Player
 from entities.team import Team
 from entities.round import Round
 from utils import is_game_won, clear_team_points, format_json
-from cards_and_announcements.cards import cards
-from cards_and_announcements.contracts import contracts
+from constants.cards import CARDS
+from constants.contracts import CONTRACTS
 from file_writers.write_to_txt import WriteToTxt
 from file_writers.pretty_json import prettyjson
 
@@ -38,12 +38,12 @@ class Game:
         clear_team_points(self.team1, self.team2)
 
     def set_contract(self):
-        contract = random.choice(contracts)
-        random.shuffle(cards)
-        self.team1.player1.set_hand(cards[:8], contract)
-        self.team1.player2.set_hand(cards[8:16], contract)
-        self.team2.player1.set_hand(cards[16:24], contract)
-        self.team2.player2.set_hand(cards[24:], contract)
+        contract = random.choice(CONTRACTS)
+        random.shuffle(CARDS)
+        self.team1.player1.set_hand(CARDS[:8], contract)
+        self.team1.player2.set_hand(CARDS[8:16], contract)
+        self.team2.player1.set_hand(CARDS[16:24], contract)
+        self.team2.player2.set_hand(CARDS[24:], contract)
         return contract
 
     def to_dict(self):

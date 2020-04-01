@@ -1,5 +1,5 @@
-from cards_and_announcements.announcements import carres, quintes, quartes, trieces
-from cards_and_announcements.belots import belots_modes
+from constants.announcements import CARRES, QUINTES, QUARTES, TRIECES
+from constants.belots import BELOTS_MODES
 
 
 class Player:
@@ -29,7 +29,7 @@ class Player:
         self.check_if_hand_contains_higher_announcements()
 
     def check_if_hand_contains_belots(self, hand, contract):
-        belots = belots_modes[contract]
+        belots = BELOTS_MODES[contract]
         for belot in belots:
             if set(belot).issubset(set(hand)):
                 self.belots.append(belot)
@@ -44,7 +44,7 @@ class Player:
 
     def check_if_hand_contains_carres(self, hand):
         state_for_carre_points = 0  # resolves how much points to give according to "carres" list above
-        for carre in carres:
+        for carre in CARRES:
             carre_set = set(carre)
             if carre_set.issubset(hand):
                 self.carres.append(carre)
@@ -59,7 +59,7 @@ class Player:
         return hand
 
     def check_if_hand_contains_quintes(self, hand):
-        for quinte in quintes:
+        for quinte in QUINTES:
             quinte_set = set(quinte)
             if quinte_set.issubset(hand):
                 self.quintes.append(quinte)
@@ -67,7 +67,7 @@ class Player:
         return hand
 
     def check_if_hand_contains_quartes(self, hand):
-        for quarte in quartes:
+        for quarte in QUARTES:
             quarte_set = set(quarte)
             if quarte_set.issubset(hand):
                 self.quartes.append(quarte)
@@ -75,7 +75,7 @@ class Player:
         return hand
 
     def check_if_hand_contains_trieces(self, hand):
-        for triece in trieces:
+        for triece in TRIECES:
             triece_set = set(triece)
             if triece_set.issubset(hand):
                 self.trieces.append(triece)

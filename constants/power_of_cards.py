@@ -1,4 +1,4 @@
-power_of_cards = {
+POWER_OF_CARDS = {
     '7': 7,
     '8': 8,
     '9': 9,

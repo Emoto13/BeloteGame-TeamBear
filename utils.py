@@ -1,5 +1,5 @@
 import re
-from cards_and_announcements.power_of_cards import power_of_cards
+from constants.power_of_cards import POWER_OF_CARDS
 
 
 def format_json(json):
@@ -42,7 +42,7 @@ def check_highest_card(entity1_best_announcement, entity2_best_announcement, typ
 
 
 def highest_card(entity_best_announcement):
-    return power_of_cards[entity_best_announcement[-1][:-1]]
+    return POWER_OF_CARDS[entity_best_announcement[-1][:-1]]
 
 
 def is_game_won(team1, team2):
