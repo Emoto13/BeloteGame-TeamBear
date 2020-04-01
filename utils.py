@@ -1,5 +1,5 @@
 import re
-from power_of_cards import power_of_cards
+from cards_and_announcements.power_of_cards import power_of_cards
 
 
 def format_json(json):
@@ -23,8 +23,8 @@ def best_announcement(entity1, entity2):
 
 def check_highest_card(entity1_best_announcement, entity2_best_announcement, type_of_entity):
     # gets the power of the card and converts it to int so we can >=<
-    from Player import Player
-    from Team import Team
+    from entities.player import Player
+    from entities.team import Team
 
     entity1_highest_card = highest_card(entity1_best_announcement)
     entity2_highest_card = highest_card(entity2_best_announcement)

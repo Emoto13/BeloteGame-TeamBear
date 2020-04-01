@@ -1,9 +1,9 @@
-from Player import Player
-from Team import Team
+from entities.player import Player
+from entities.team import Team
 from utils import is_match_won
-from Game import Game
-from WriteToTxt import WriteToTxt
-from WriteToJSON import WriteToJSON
+from entities.game import Game
+from file_writers.write_to_txt import WriteToTxt
+from file_writers.write_to_json import WriteToJSON
 
 
 def read_teams_names():
